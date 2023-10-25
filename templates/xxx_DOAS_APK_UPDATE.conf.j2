@@ -1,4 +1,4 @@
 #
 # {{ ansible_managed }}
 #
-permit nopass {{ doas_user }} cmd /sbin/apk args update
+permit nopass {{ doas_user_or_group }} cmd /sbin/apk args update
