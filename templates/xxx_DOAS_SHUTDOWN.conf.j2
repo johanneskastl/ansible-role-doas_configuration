@@ -1,4 +1,4 @@
 #
 # {{ ansible_managed }}
 #
-permit nopass {{ doas_user }} cmd /sbin/shutdown args -h now
+permit nopass {{ doas_user_or_group }} cmd /sbin/shutdown args -h now
