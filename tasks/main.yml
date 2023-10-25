@@ -22,5 +22,6 @@
   loop:
     - 'xxx_DOAS_APK_UPDATE.conf'
     - 'xxx_DOAS_APK_UPGRADE.conf'
+    - 'xxx_DOAS_POWEROFF.conf'
   when:
     - ansible_os_family == 'Alpine'
