@@ -13,7 +13,8 @@ None.
 Role Variables
 --------------
 
-None.
+- `doas_user` (string): Name of the user that should be added to the doas
+  configuration. By default, this uses the `ansible_user`.
 
 Dependencies
 ------------
