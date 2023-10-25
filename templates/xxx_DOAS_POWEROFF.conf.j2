@@ -1,4 +1,4 @@
 #
 # {{ ansible_managed }}
 #
-permit nopass {{ doas_user }} cmd /sbin/poweroff args
+permit nopass {{ doas_user_or_group }} cmd /sbin/poweroff args
