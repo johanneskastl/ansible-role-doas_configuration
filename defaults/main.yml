@@ -1,4 +1,4 @@
 ---
 # doas_configuration/defaults/main.yml
 
-doas_user: "{{ ansible_user }}"
+doas_user_or_group: "{{ ansible_user }}"
