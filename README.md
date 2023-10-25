@@ -13,8 +13,9 @@ None.
 Role Variables
 --------------
 
-- `doas_user` (string): Name of the user that should be added to the doas
-  configuration. By default, this uses the `ansible_user`.
+- `doas_user_or_group` (string): Name of the user or group that should be added
+  to the doas configuration. By default, this uses the `ansible_user`.
+  If you want to use a group, be sure to prefix it with a colon, e.g. `:wheel`.
 
 Dependencies
 ------------
