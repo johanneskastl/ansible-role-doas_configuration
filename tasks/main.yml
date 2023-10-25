@@ -1,0 +1,26 @@
+---
+# doas_configuration/tasks/main.yml
+
+- name: 'Create files for reboot and shutdown'
+  ansible.builtin.template:
+    src: "{{ item }}.j2"
+    dest: "/etc/doas.d/{{ item }}"
+    owner: 'root'
+    group: 'root'
+    mode: '0600'
+  loop:
+    - 'xxx_DOAS_REBOOT.conf'
+    - 'xxx_DOAS_SHUTDOWN.conf'
+
+- name: 'Create files for AlpineLinux'
+  ansible.builtin.template:
+    src: "{{ item }}.j2"
+    dest: "/etc/doas.d/{{ item }}"
+    owner: 'root'
+    group: 'root'
+    mode: '0600'
+  loop:
+    - 'xxx_DOAS_APK_UPDATE.conf'
+    - 'xxx_DOAS_APK_UPGRADE.conf'
+  when:
+    - ansible_os_family == 'Alpine'
