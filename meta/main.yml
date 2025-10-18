@@ -12,7 +12,7 @@ galaxy_info:
   platforms:
     - name: Alpine
       versions:
-        - '3.18'
+        - all
 
   galaxy_tags: []
 
