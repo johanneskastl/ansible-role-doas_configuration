@@ -2,3 +2,6 @@
 # {{ ansible_managed }}
 #
 permit nopass {{ doas_user_or_group }} cmd /sbin/reboot args
+{% if doas_configuration_allow_relative_paths_for_binaries | bool %}
+permit nopass {{ doas_user_or_group }} cmd reboot args
+{% endif %}
