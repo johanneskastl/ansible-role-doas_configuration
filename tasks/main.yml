@@ -25,3 +25,14 @@
     - xxx_DOAS_POWEROFF.conf
   when:
     - ansible_os_family == "Alpine"
+
+- name: Create files for additional rules
+  ansible.builtin.template:
+    src: xxx_DOAS_additional_rules.conf.j2
+    dest: "/etc/doas.d/xxx_DOAS_{{ item.name }}.conf"
+    owner: root
+    group: root
+    mode: '0600'
+  loop: "{{ doas_configuration_additional_rules }}"
+  when:
+    - doas_configuration_additional_rules is defined
