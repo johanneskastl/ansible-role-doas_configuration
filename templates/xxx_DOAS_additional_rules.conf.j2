@@ -1,0 +1,8 @@
+#
+# Ansible managed
+#
+{% if item.arguments is defined %}
+permit nopass {{ doas_user_or_group }} cmd {{ item.command }} args {{ item.arguments }}
+{% else %}
+permit nopass {{ doas_user_or_group }} cmd {{ item.command }} args
+{% endif %}
